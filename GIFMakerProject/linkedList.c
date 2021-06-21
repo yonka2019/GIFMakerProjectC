@@ -45,12 +45,13 @@ Frame* initFrame(FrameNode* head)
 Frame* createFrame(char* path, int duration, char* name)
 {
 	Frame* newFrame = (Frame*)malloc(sizeof(Frame));
+
 	newFrame->path = (char*)malloc((strlen(path) + 1) * sizeof(char));
 	newFrame->name = (char*)malloc((strlen(name) + 1) * sizeof(char));
 
-	strcpy(newFrame->path, path);
-	newFrame->duration = duration;
-	strcpy(newFrame->name, name);
+	strcpy(newFrame->path, path); // path
+	newFrame->duration = duration; // duration
+	strcpy(newFrame->name, name);  // name
 
 	return newFrame;
 }
@@ -156,8 +157,8 @@ void changeIndex(FrameNode** head, char* name, int index)
 	FrameNode* root = *head;
 	FrameNode* link = root;
 	FrameNode* prev = 0;
-
 	int count = 0;
+
 	if (getLength(root) < index)
 	{
 		printf("The index is greater than the list size\n");
@@ -220,6 +221,7 @@ int getLength(FrameNode* head)
 void changeDuration(FrameNode** head, char* name, int duration)
 {
 	FrameNode* p = *head;
+
 	while (p && strcmp(p->frame->name, name) != 0)
 	{
 		p = p->next;
@@ -234,6 +236,7 @@ void changeDuration(FrameNode** head, char* name, int duration)
 void changeAllDurations(FrameNode** head, int duration)
 {
 	FrameNode* p = *head;
+
 	while (p)
 	{
 		p->frame->duration = duration;
@@ -243,6 +246,7 @@ void changeAllDurations(FrameNode** head, int duration)
 void freeMemory(FrameNode* head)
 {
 	FrameNode* temp = head;
+
 	while (head)
 	{
 		temp = head->next;
@@ -256,6 +260,7 @@ void freeMemory(FrameNode* head)
 bool fileExists(char* path)
 {
 	FILE* file = NULL;
+
 	if ((file = fopen(path, "r")))
 	{
 		fclose(file);

@@ -21,6 +21,7 @@ FrameNode* askLoadProject()
 		myFgets(path, STR_LEN);
 		return loadProject(path);
 	}
+
 	return NULL;
 }
 FrameNode* loadProject(char* projectPath)
@@ -36,7 +37,7 @@ FrameNode* loadProject(char* projectPath)
 	char name[STR_LEN] = { 0 };
 
 	char cToStr[2] = { 0 }; // Char to string to use strcat()
-	cToStr[1] = '\0';
+	cToStr[1] = '\0'; // array that ends with '/0' (NULL) is string
 
 	projectFile = fopen(projectPath, "r");
 	if (projectFile == NULL)
@@ -88,6 +89,7 @@ FrameNode* loadProject(char* projectPath)
 				break;
 		}
 	}
+
 	fclose(projectFile);
 	return head;
 }
