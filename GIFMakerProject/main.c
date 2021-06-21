@@ -10,7 +10,6 @@
 #include "view.h"
 #include "projectManager.h"
 
-
 #define EXIT 0
 #define ADD 1
 #define REMOVE 2
