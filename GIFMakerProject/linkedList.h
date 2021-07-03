@@ -93,7 +93,7 @@ bool frameExist(FrameNode* head, char* name);
 /// </summary>
 /// <param name="head">Frames node (list)</param>
 /// <param name="name">Name of the given frame to remove from the given frame list</param>
-/// <returns></returns>
+/// <returns>True if success, false if there is error (which means - there is no frame with the given name)</returns>
 bool removeFrame(FrameNode** head, char* name);
 /// <summary>
 /// Initializes frame
