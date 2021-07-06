@@ -45,7 +45,6 @@ FrameNode* loadProject(char* projectPath)
 		printf("Can't open \"%s\" file\n", projectPath);
 
 		exit(-1);
-		return NULL;
 	}
 
 	while ((ch = (char)fgetc(projectFile)) != EOF)
